@@ -32,6 +32,17 @@
         {"id": 14, "name": "Crashhopper"},
         {"id": 15, "name": "Ball Weevil"}
       ]
+    },
+    {
+      "id": 4,
+      "name": "Biomnitrix",
+      "aliens": [
+        {"id": 16, "name": "Alien1"},
+        {"id": 17, "name": "Alien2"},
+        {"id": 18, "name": "Alien3"},
+        {"id": 19, "name": "Alien4"},
+        {"id": 20, "name": "Alien5"}
+      ]
     }
   ]
 }
