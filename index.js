@@ -35,6 +35,40 @@ server.put('/omnitrix/:id', (req, res) => {
     res.status(404).json({ error: 'Omnitrix no encontrado' });
   }
 });
+// put para actualizar solo la lista de aliens de un omnitrix
+server.put('/omnitrix/:id/aliens', (req, res) => {
+  const id = parseInt(req.params.id);
+  const updatedData = req.body;
+  const indexToUpdate = omnitrixData.versions.findIndex(x => x.id === id);
+  if (indexToUpdate !== -1) {
+    omnitrixData.versions[indexToUpdate] = {
+      ...omnitrixData.versions[indexToUpdate],
+      ...updatedData
+    };
+    res.json(omnitrixData.versions[indexToUpdate]);
+  } else {
+    res.status(404).json({ error: 'Omnitrix no encontrado' });
+  }
+});
+// put para actualizar el nombre de un alien por su ID
+server.put('/omnitrix/:id/aliens/:alienId', (req, res) => {
+  const omnitrixId = parseInt(req.params.id);
+  const alienId = parseInt(req.params.alienId);
+  const updatedName = req.body.name;
+  const omnitrix = omnitrixData.versions.find(x => x.id === omnitrixId);
+  if (omnitrix) {
+    const alienToUpdate = omnitrix.aliens.find(a => a.id === alienId);
+    if (alienToUpdate) {
+      // Actualizar el nombre del alien
+      alienToUpdate.name = updatedName;
+      res.json(alienToUpdate);
+    } else {
+      res.status(404).json({ error: 'Alien no encontrado en el Omnitrix' });
+    }
+  } else {
+    res.status(404).json({ error: 'Omnitrix no encontrado' });
+  }
+});
 //delete omnitrix
 server.delete('/omnitrix/:id', (req, res) => {
   const id = parseInt(req.params.id);
