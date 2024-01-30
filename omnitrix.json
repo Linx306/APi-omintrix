@@ -4,33 +4,78 @@
       "id": 1,
       "name": "Original",
       "aliens": [
-        {"id": 1, "name": "Fuego"},
-        {"id": 2, "name": "Cuatro Brazos"},
-        {"id": 3, "name": "XLR8"},
-        {"id": 4, "name": "Diamante"},
-        {"id": 5, "name": "Muy grande"}
+        {
+          "id": 1,
+          "name": "Fuego"
+        },
+        {
+          "id": 2,
+          "name": "Cuatro Brazos"
+        },
+        {
+          "id": 3,
+          "name": "XLR8"
+        },
+        {
+          "id": 4,
+          "name": "Diamante"
+        },
+        {
+          "id": 5,
+          "name": "Muy grande"
+        }
       ]
     },
     {
       "id": 2,
       "name": "Ultimate",
       "aliens": [
-        {"id": 6, "name": "Piedra"},
-        {"id": 7, "name": "Fuego pantanoso"},
-        {"id": 8, "name": "Frio"},
-        {"id": 9, "name": "Muy grande pero chido"},
-        {"id": 10, "name": "HUMUNGOSAURIO"}
+        {
+          "id": 6,
+          "name": "Piedra"
+        },
+        {
+          "id": 7,
+          "name": "Fuego pantanoso"
+        },
+        {
+          "id": 8,
+          "name": "Frio"
+        },
+        {
+          "id": 9,
+          "name": "Muy grande pero chido"
+        },
+        {
+          "id": 10,
+          "name": "HUMUNGOSAURIO"
+        }
       ]
     },
     {
       "id": 3,
       "name": "Omniverse",
       "aliens": [
-        {"id": 11, "name": "Feedback"},
-        {"id": 12, "name": "Bloxx"},
-        {"id": 13, "name": "Gravattack"},
-        {"id": 14, "name": "Crashhopper"},
-        {"id": 15, "name": "Ball Weevil"}
+        {
+          "id": 11,
+          "name": "Feedback"
+        },
+        {
+          "id": 12,
+          "name": "Bloxx"
+        },
+        {
+          "id": 13,
+          "name": "Gravattack"
+        },
+        {
+          "id": 14,
+          "name": "Crashhopper"
+        },
+        {
+          "id": 15,
+          "name": "Ball Weevil"
+        }
       ]
     }
   ]
