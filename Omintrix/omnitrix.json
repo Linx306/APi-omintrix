@@ -1,0 +1,8 @@
+{
+    "versions": [
+      {"id": 1, "name": "Original"},
+      {"id": 2, "name": "Ultimate"},
+      {"id": 3, "name": "Omniverse"},
+      {"id": 4, "name": "Biomnitrix"}
+    ]
+  }
