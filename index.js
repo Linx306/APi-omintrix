@@ -2,6 +2,7 @@ const express =require('express')
 const fs = require('fs');
 const server =express()
 const omnitrixData = require('./omnitrix.json');
+server.use(express.json());
 //get da todas las versiones del omnitrix
 server.use(express.json());
 server.get('/omnitrix', (req, res) => {
@@ -19,6 +20,21 @@ server.get('/omnitrix/:id/aliens', (req, res) => {
   const version = omnitrixData.versions.find(x => x.id === id);
   res.json(version.aliens);
 })
+// put para actualizar un omnitrix
+server.put('/omnitrix/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const updatedVersion = req.body;
+  const indexToUpdate = omnitrixData.versions.findIndex(x => x.id === id);
+  if (indexToUpdate !== -1) {
+    omnitrixData.versions[indexToUpdate] = {
+      ...omnitrixData.versions[indexToUpdate],
+      ...updatedVersion
+    };
+    res.json(omnitrixData.versions);
+  } else {
+    res.status(404).json({ error: 'Omnitrix no encontrado' });
+  }
+});
 //delete omnitrix
 server.delete('/omnitrix/:id', (req, res) => {
   const id = parseInt(req.params.id);
