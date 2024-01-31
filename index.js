@@ -34,6 +34,8 @@ server.put('/omnitrix/:id', (req, res) => {
       ...omnitrixData.versions[indexToUpdate],
       ...updatedVersion
     };
+    fs.writeFile('./omnitrix.json', JSON.stringify(omnitrixData, null, 2), (err) => {
+    })
     res.json(omnitrixData.versions);
   } else {
     res.status(404).json({ error: 'Omnitrix no encontrado' });

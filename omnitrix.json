@@ -28,27 +28,15 @@
     },
     {
       "id": 2,
-      "name": "Ultimate",
+      "name": "Ultimate update",
       "aliens": [
         {
-          "id": 6,
-          "name": "Piedra"
+          "id": 30,
+          "name": "Atomix"
         },
         {
           "id": 7,
-          "name": "Fuego pantanoso"
-        },
-        {
-          "id": 8,
-          "name": "Frio"
-        },
-        {
-          "id": 9,
-          "name": "Muy grande pero chido"
-        },
-        {
-          "id": 10,
-          "name": "HUMUNGOSAURIO"
+          "name": "Bestia"
         }
       ]
     },
