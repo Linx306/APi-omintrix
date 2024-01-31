@@ -50,6 +50,8 @@ server.put('/omnitrix/:id/aliens', (req, res) => {
       ...omnitrixData.versions[indexToUpdate],
       ...updatedData
     };
+    fs.writeFile('./omnitrix.json', JSON.stringify(omnitrixData, null, 2), (err) => {
+    });
     res.json(omnitrixData.versions[indexToUpdate]);
   } else {
     res.status(404).json({ error: 'Omnitrix no encontrado' });
@@ -67,6 +69,8 @@ server.put('/omnitrix/:id/aliens/:alienId', (req, res) => {
     if (alienToUpdate) {
       // Actualizar el nombre del alien
       alienToUpdate.name = updatedName;
+      fs.writeFile('./omnitrix.json', JSON.stringify(omnitrixData, null, 2), (err) => {
+      });
       res.json(alienToUpdate);
     } else {
       res.status(404).json({ error: 'Alien no encontrado en el Omnitrix' });
