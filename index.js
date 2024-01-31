@@ -4,7 +4,6 @@ const server =express()
 const omnitrixData = require('./omnitrix.json');
 server.use(express.json());
 //get da todas las versiones del omnitrix
-server.use(express.json());
 server.get('/omnitrix', (req, res) => {
   res.json(omnitrixData.versions);
 });
@@ -35,7 +34,8 @@ server.put('/omnitrix/:id', (req, res) => {
     res.status(404).json({ error: 'Omnitrix no encontrado' });
   }
 });
-//delete omnitrix
+
+//delete para borrar un omnitrix
 server.delete('/omnitrix/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const indexToRemove = omnitrixData.versions.findIndex(x => x.id === id);
@@ -44,18 +44,9 @@ server.delete('/omnitrix/:id', (req, res) => {
     });
   res.json(omnitrixData.versions);
 });
-
-
-//agregar omnitrix
-server.post('/omnitrix', (req, res) => {
-  const newVersion = req.body;
-  omnitrixData.versions.push(newVersion);
-  fs.writeFile('./omnitrix.json', JSON.stringify(omnitrixData, null, 2), (err) => {
-  })
-  res.json(omnitrixData.versions);
-});
-
-  server.listen(3002,()=>{
-    console.log("SERVER IS RUNNING")
-    }) 
+//comprobacion de que el servidor esta corriendo
+server.listen(3002,()=>{
+  console.log("SERVER IS RUNNING")
+  }) 
+  
 
